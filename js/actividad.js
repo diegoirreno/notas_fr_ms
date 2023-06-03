@@ -7,7 +7,7 @@ $(document).ready(function () {
 function mostrarActividades() {
     $.ajax({
         method: 'get',
-        url: 'http://localhost:8000/verEstudiantes'
+        url: 'http://localhost:8000/verActividades'
     }).done((response) => {
         const dataJson = JSON.parse(response);
         const usuarios = dataJson.data;
@@ -54,7 +54,7 @@ document.getElementById('guardar').addEventListener('click', () => {
     if (descripcion && nota && codigoEstudiante) {
         if (banActividad == 0) {
             $.ajax({
-                url: 'http://localhost:8000/agregarEstudiantes',
+                url: 'http://localhost:8000/agregarActividades',
                 method: 'post',
                 data: {
                     descripcion: descripcion,
@@ -73,7 +73,7 @@ document.getElementById('guardar').addEventListener('click', () => {
             let descripcionModificar = formularioModificar['descripcion'].value;
             let notaModificar = formularioModificar['nota'].value;
             $.ajax({
-                url: 'http://localhost:8000/actualizarEstudiantes/' + id ,
+                url: 'http://localhost:8000/actualizarActividades/' + id ,
                 method: 'put',
                 data: {
                     descripcion: descripcionModificar,
@@ -100,7 +100,7 @@ function modificar(Id) {
 
 function eliminar(id) {
     $.ajax({
-        url: 'http://localhost:8000/eliminarEstudiantes/' + id,
+        url: 'http://localhost:8000/eliminarActividades/' + id,
         method: 'delete',
     }).done(response => {
         const dataJson = JSON.parse(response);
