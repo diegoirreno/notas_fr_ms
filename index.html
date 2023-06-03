@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro estudiantes</title>
+</head>
+
+<body>
+    <header>
+        <h1>Registro de estudiantes</h1>
+    </header>
+    <main>
+        <section>
+            <button id="registrar">Registrar usuario</button>
+        </section>
+        <section>
+            <table id="estudiantesTb">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section id="formularioModal" class="modal-content close-modal">
+            <button id="cerrarModal" class="cerrar-btn">X</button>
+            <h2 id="tituloModal">Registrar/Modificar</h2>
+            <form id="formEstudiante" name="formularioEstudiante">
+                <label>
+                    <span>Codigo:</span>
+                    <input id="codigo" type="number"  name="codigo" required>
+                    <span>Nombres:</span>
+                    <input id="nombres" type="text" name="nombres" maxlength="150" required>
+                    <span>Apellidos:</span>
+                    <input id="apellidos" type="text" name="apellidos" maxlength="100" required>
+                </label>
+                <section>
+                    <button id="guardar" type="button">Guardar</button>
+                </section>
+            </form>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/estudiante.js"></script>
+</body>
+
+</html>
