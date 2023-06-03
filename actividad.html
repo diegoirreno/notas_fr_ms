@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro estudiantes</title>
+</head>
+
+<body>
+    <header>
+        <h1>Registro de estudiantes</h1>
+    </header>
+    <main>
+        <section>
+            <button id="registrar">Registrar usuario</button>
+        </section>
+        <section>
+            <table id="actividadesTb">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descripcion</th>
+                        <th>Nota</th>
+                        <th>Codigo estudiante</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section id="formularioModal" class="modal-content close-modal">
+            <button id="cerrarModal" class="cerrar-btn">X</button>
+            <h2 id="tituloModal">Registrar/Modificar</h2>
+            <form id="formEstudiante" name="formularioEstudiante">
+                <label>
+                    <span>Descripcion:</span>
+                    <input id="descripcion" type="text"  name="descripcion" maxlength="200" required>
+                    <span>Nota:</span>
+                    <input id="nota" type="number" name="nota" min="0" max="5" required>
+                    <span>Codigo estudiante:</span>
+                    <input id="codigoEstudiante" type="number" name="codigoEstudiante" required>
+                </label>
+                <section>
+                    <button id="guardar" type="button">Guardar</button>
+                </section>
+            </form>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/actividad.js"></script>
+</body>
+
+</html>
