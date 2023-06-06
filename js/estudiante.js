@@ -43,10 +43,6 @@ document.getElementById('registrar').addEventListener('click', () => {
     document.getElementById('tituloModal').innerText = 'Registrar';
 });
 
-document.getElementById('cerrarModal').addEventListener('click', () => {
-    document.getElementById('formularioModal').classList.add('close-modal');
-});
-
 
 document.getElementById('guardar').addEventListener('click', () => {
     let formulario = document.forms['formularioEstudiante'];
@@ -82,6 +78,7 @@ document.getElementById('guardar').addEventListener('click', () => {
                     nombres: nombresModificar,
                     apellidos: apellidosModificar
                 }
+            
             }).done(response => {
                 const dataJson = JSON.parse(response);
                 const msg = dataJson.data;

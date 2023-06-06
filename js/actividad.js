@@ -40,10 +40,6 @@ document.getElementById('registrar').addEventListener('click', () => {
     document.getElementById('tituloModal').innerText = 'Registrar';
 });
 
-document.getElementById('cerrarModal').addEventListener('click', () => {
-    document.getElementById('formularioModal').classList.add('close-modal');
-});
-
 
 document.getElementById('guardar').addEventListener('click', () => {
     let formulario = document.forms['formularioActividad'];
