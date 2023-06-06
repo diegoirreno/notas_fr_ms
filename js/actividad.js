@@ -32,6 +32,12 @@ function mostrarActividades() {
         tbody.innerHTML = html;
         const promedio = calcularPromedio();
         document.getElementById('promedio').innerText = promedio;
+        if(promedio>=3){
+            document.getElementById('tituloPromedio').innerText = 'Felicidades aprobo';
+        }else{
+            document.getElementById('tituloPromedio').innerText = 'Lamentablemente reprobo';
+        }
+
 
     }).fail((error) => {
         console.error(error);
