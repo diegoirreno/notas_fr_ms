@@ -120,18 +120,18 @@ function eliminar(id) {
 function calcularPromedio() {
 
     let notas = [];
-    const filas = document.querySelectorAll('#actividadesTb tbody tr');
+    let filas = document.querySelectorAll('#actividadesTb tbody tr');
     
     filas.forEach(fila => {
-        const nota = parseFloat(fila.querySelector('td:nth-child(3)').innerText);
+        const nota = parseFloat(fila.querySelector('td:nth-child(3)').innerText);//Selecciona los elementos de la tercera fila de la tabla y lo selecciona para combertirlo a un valor numerico
         notas.push(nota);
     });
     
-    const totalNotas = notas.length;
+   let totalNotas = notas.length;
     
     if (totalNotas > 0) {
-        const sumaNotas = notas.reduce((acumulador, nota) => acumulador + nota, 0);
-        const promedio = sumaNotas / totalNotas;
+        let sumaNotas = notas.reduce((acumulador, nota) => acumulador + nota, 0);
+        let promedio = sumaNotas / totalNotas;
         return promedio.toFixed(2); // Redondear a 2 decimales
     }
     
