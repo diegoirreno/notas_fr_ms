@@ -30,6 +30,9 @@ function mostrarActividades() {
         });
 
         tbody.innerHTML = html;
+        const promedio = calcularPromedio();
+        document.getElementById('promedio').innerText = promedio;
+
     }).fail((error) => {
         console.error(error);
     });
@@ -107,3 +110,27 @@ function eliminar(id) {
 
     });
 }
+
+function calcularPromedio() {
+
+    let notas = [];
+    const filas = document.querySelectorAll('#actividadesTb tbody tr');
+    
+    filas.forEach(fila => {
+        const nota = parseFloat(fila.querySelector('td:nth-child(3)').innerText);
+        notas.push(nota);
+    });
+    
+    const totalNotas = notas.length;
+    
+    if (totalNotas > 0) {
+        const sumaNotas = notas.reduce((acumulador, nota) => acumulador + nota, 0);
+        const promedio = sumaNotas / totalNotas;
+        return promedio.toFixed(2); // Redondear a 2 decimales
+    }
+    
+    return 0; // Si no hay notas, el promedio es 0
+}
+
+
+
